@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+ p {
+  font-size: 15px;
+  line-height: 1; /* change line-height property to decrease spacing*/
+ }
+
+
+
+h3 {
+    line-height: 1; /* change line-height property to decrease spacing*/
+ }
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding:3px;  /*change padding to reduce space in the header */
+ 
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;  /* Change color for the text here */
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;  /* Change color for the text here */
+  text-align: center;
+  padding: 10px 8px; /*change padding to reduce space in the menu bar */
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color:blue;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 48.995%;
+  padding: 10px;
+  margin-top: 20px;
+
+}
+.media {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: left;
+  font-family: helvetica, sans-serif;
+}
+
+.content h2{
+  padding-top: 20px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* Start Styling for Sketch */
+.border {
+  box-sizing: border-box;
+  position: relative;
+  background: black;
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#111), to(#000));
+  padding: 20px;
+  box-shadow: 
+    -1px 1px var(--blur) 1px rgba(0, 0, 0, 0.1), 
+    -2px 2px var(--blur) 1px rgba(0, 0, 0, 0.09), 
+    -3px 3px var(--blur) 1px rgba(0, 0, 0, 0.08), 
+    -4px 4px var(--blur) 1px rgba(0, 0, 0, 0.07), 
+    -5px 5px var(--blur) 1px rgba(0, 0, 0, 0.06), 
+    -6px 6px var(--blur) 1px rgba(0, 0, 0, 0.05), 
+    -7px 7px var(--blur) 1px rgba(0, 0, 0, 0.04), 
+    -8px 8px var(--blur) 1px rgba(0, 0, 0, 0.03), 
+    -9px 9px var(--blur) 1px rgba(0, 0, 0, 0.03), 
+    -10px 10px var(--blur) 1px rgba(0, 0, 0, 0.03), 
+    -11px 11px var(--blur) 1px rgba(0, 0, 0, 0.03), 
+    -12px 12px var(--blur) 1px rgba(0, 0, 0, 0.02), 
+    -13px 13px var(--blur) 1px rgba(0, 0, 0, 0.02), 
+    -14px 14px var(--blur) 1px rgba(0, 0, 0, 0.01), 
+    -15px 15px var(--blur) 1px rgba(0, 0, 0, 0.01), 
+    -16px 16px var(--blur) 1px rgba(0, 0, 0, 0.01);
+    &:before{
+    content: ' ';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.frame {
+  left: 3%;
+  top: 2.5%;
+  box-shadow: inset -1px 1px 6px 1px rgba(0, 0, 0, 0.24);
+  background: white;
+  align-items: center;
+  display: flex;
+  padding: 40px;
+  box-sizing: border-box;
+  width: 700px; /* change to 100px bigger than canvas */
+  height: 550px; /* change to 100px bigger than canvas */
+}
+
+ .canvas {
+  box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center center;
+} 
+
+#container{
+  box-shadow: inset 0 0 1px 0 rgba(0,0,0,.2);
+  background-size: cover;
+  background-position: center center;
+  width: 600px; /*  change to the size of canvas */
+  height: 450px; /*  change to the size of canvas */
+}
+
+/* End Styling for Sketch */
+
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Tara Pirjaberi</h1>
+  <h3>My Pictoral Art Gallery</h3>
+</div>
+
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="Pictorial.html">Pictoral Art</a>
+  <a href="photography.html">Photography</a>
+  <a href="digital.html">Digital</a>
+  <a href="sculpture.html">Sculpture</a>
+</div>
+
+<div class="header">
+</div>
+
+<div id="wrapper">
+
+<div class="row">
+
+  <div class="column">
+    <div class="media">
+      <a href="your net art github page goes here">
+      <img src="1.jpg" alt="netart" width="400" height="494">
+      </a>
+    </div>
+
+    <div class="content">
+    <h2>Artist Statement</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+    </div>
+  </div>
+
+  
+</div>
+
+ </div> 
+
+  <div class="footer">
+  <h2>Contact</h2>
+  </div>
+
+</body>
+</html>
